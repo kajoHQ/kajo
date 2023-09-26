@@ -48,5 +48,13 @@ KAJO provides different patterns to choose from when creating tasks, simplifying
 KAJO provides multiple interfaces for interacting with the system:
 
 **User Interface (UI)**: A user-friendly UI for managing tasks and monitoring their status.
+
 **Command Line Interface (CLI)**: A CLI for managing tasks and monitoring their status.
+
 **REST API**: A REST API for managing tasks and monitoring their status.
+
+
+## Architecture
+
+<img width="1457" alt="image" src="https://github.com/adhaamehab/KAJO/assets/13816742/eb09bad7-1d30-4ddf-b89f-b53f06b7b2ba">
+
