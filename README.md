@@ -23,9 +23,6 @@ With system state stored in Kubernetes' etcd, KAJO offers resilience against ser
 ### Security
 KAJO operates entirely within your Kubernetes cluster, providing an inherent level of security and control.
 
-### Idempotence
-Tasks are designed to yield the same results, irrespective of the number of executions, to ensure consistency.
-
 ### Exactly Once Execution
 KAJO guarantees that each task is executed only once, preventing duplicate executions and ensuring data integrity.
 
