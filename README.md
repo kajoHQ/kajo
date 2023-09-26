@@ -4,6 +4,8 @@
 
 Kubernetes-native platform bringing simplicity and efficiency to the orchestration and management of Jobs and Workers. This project is currently in the early stages of development and is looking to reshape the way we manage asynchronous tasks within Kubernetes environments.
 
+> KAJO is still very early and not suitable for production applications. Future versions will gurantee more stability in design and implementation.
+
 ## Why KAJO?
 
 Built with Go, KAJO provides a scalable, highly available, and user-friendly solution designed to meet the needs of modern cloud-native applications. The key features of KAJO include:
