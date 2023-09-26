@@ -2,7 +2,8 @@ FROM golang:1.21 as builder
 WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
-COPY main.go .
+COPY pkg .
+COPY cmd/server/* .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o kajo .
 
 FROM alpine:latest

@@ -28,7 +28,7 @@ func jobsHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	jobs, err := clientset.BatchV1().Jobs(metav1.NamespaceDefault).List(r.Context(), metav1.ListOptions{})
+	jobs, err := clientset.BatchV1().Jobs("workers").List(r.Context(), metav1.ListOptions{})
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

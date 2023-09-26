@@ -17,9 +17,14 @@ metadata:
   name: kajo-role
 rules:
   - apiGroups: [""]
-    resources: ["pods"]
+    resources: ["pods", "pods/log", "services", "endpoints"]
     verbs: ["get", "watch", "list", "create", "delete"]
-
+  - apiGroups: ["extensions", "apps"]
+    resources: ["deployments", "replicasets", "daemonsets", "statefulsets"]
+    verbs: ["get", "watch", "list", "create", "delete"]
+  - apiGroups: ["batch"]
+    resources: ["jobs", "cronjobs"]
+    verbs: ["get", "watch", "list", "create", "delete"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -42,8 +47,9 @@ metadata:
   name: kajo-api
   labels:
     app: kajo-api
+  namespace: workers
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: kajo-api
@@ -58,16 +64,3 @@ spec:
           image: kajo-api:dev-latest
           ports:
             - containerPort: 5050
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: kajo-api
-  labels:
-    app: kajo-api
-spec:
-  selector:
-    app: kajo-api
-  ports:
-    - protocol: TCP
-      port: 80
