@@ -1,5 +1,7 @@
 # KAJO: Kubernetes Asynchronous Jobs Orchestrator
 
+![KAJO](https://github.com/adhaamehab/KAJO/assets/13816742/af0ed9d2-14d7-42d0-bd02-e355cb4cb941)
+
 Kubernetes-native platform bringing simplicity and efficiency to the orchestration and management of Jobs and Workers. This project is currently in the early stages of development and is looking to reshape the way we manage asynchronous tasks within Kubernetes environments.
 
 ## Why KAJO?
