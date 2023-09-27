@@ -23,18 +23,18 @@ type Store interface {
 	// List lists all the tasks in the store.
 	List() ([]*Task, error)
 
-	// ListByStatus lists all the tasks in the store with the given status.
-	ListByStatus(status string) ([]*Task, error)
+	// // ListByStatus lists all the tasks in the store with the given status.
+	// ListByStatus(status string) ([]*Task, error)
 
-	// ListByKind lists all the tasks in the store with the given kind.
-	ListByKind(kind string) ([]*Task, error)
+	// // ListByKind lists all the tasks in the store with the given kind.
+	// ListByKind(kind string) ([]*Task, error)
 
-	// ListByKindAndStatus lists all the tasks in the store with the given kind and status.
-	ListByKindAndStatus(kind, status string) ([]*Task, error)
+	// // ListByKindAndStatus lists all the tasks in the store with the given kind and status.
+	// ListByKindAndStatus(kind, status string) ([]*Task, error)
 
-	// ListByLabel lists all the tasks in the store with the given label.
-	ListByLabel(label string) ([]*Task, error)
+	// // ListByLabel lists all the tasks in the store with the given label.
+	// ListByLabel(label string) ([]*Task, error)
 
-	// GetSummary gets the summary of the tasks in the store.
-	GetSummary() (map[string]int, error)
+	// // GetSummary gets the summary of the tasks in the store.
+	// GetSummary() (map[string]int, error)
 }
