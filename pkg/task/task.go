@@ -24,36 +24,36 @@ func (tk TaskKind) String() string {
 // Task is an abstraction for all different resources that can be created by KAJO.
 type Task struct {
 	// Identification
-	ID               string `gorm:"primary_key"`
-	Name             string `gorm:"type:varchar(255)"`
-	UserFriendlyName string `gorm:"type:varchar(255)"`
-	Namespace        string `gorm:"type:varchar(255)"`
+	ID               string `gorm:"primary_key" json:"id"`
+	Name             string `gorm:"type:varchar(255)" json:"name"`
+	UserFriendlyName string `gorm:"type:varchar(255)" json:"userFriendlyName"`
+	Namespace        string `gorm:"type:varchar(255)" json:"namespace"`
 
 	// User related metadata
-	Kind           TaskKind          `gorm:"type:int"`
-	APIVersion     string            `gorm:"type:varchar(255)"`
-	ContainerImage string            `gorm:"type:varchar(255)"`
-	Labels         map[string]string `gorm:"type:json"`
+	Kind           TaskKind          `gorm:"type:int" json:"kind"`
+	APIVersion     string            `gorm:"type:varchar(255)" json:"apiVersion"`
+	ContainerImage string            `gorm:"type:varchar(255)" json:"containerImage"`
+	Labels         map[string]string `gorm:"type:json" json:"labels"`
 
 	// Kubernetes related metadata
-	KLabels        map[string]string `gorm:"type:json"`
-	KAnnotations   map[string]string `gorm:"type:json"`
-	KStatus        string            `gorm:"type:varchar(255)"`
-	KStatusMessage string            `gorm:"type:varchar(255)"`
+	KLabels        map[string]string `gorm:"type:json" json:"kLabels"`
+	KAnnotations   map[string]string `gorm:"type:json" json:"kAnnotations"`
+	KStatus        string            `gorm:"type:varchar(255)" json:"kStatus"`
+	KStatusMessage string            `gorm:"type:varchar(255)" json:"kStatusMessage"`
 
 	// Time related fields
-	CreatedAt  time.Time `gorm:"type:timestamp"`
-	UpdatedAt  time.Time `gorm:"type:timestamp"`
-	StartedAt  time.Time `gorm:"type:timestamp"`
-	FinishedAt time.Time `gorm:"type:timestamp"`
+	CreatedAt  time.Time `gorm:"type:timestamp" json:"createdAt"`
+	UpdatedAt  time.Time `gorm:"type:timestamp" json:"updatedAt"`
+	StartedAt  time.Time `gorm:"type:timestamp" json:"startedAt"`
+	FinishedAt time.Time `gorm:"type:timestamp" json:"finishedAt"`
 
 	// Configuration
-	EnvVars   map[string]string `gorm:"type:json"`
-	Resources Resources         `gorm:"embedded"`
-	Timeout   int               `gorm:"type:int"` // Timeout in seconds
+	EnvVars   map[string]string `gorm:"type:json" json:"envVars"`
+	Resources Resources         `gorm:"embedded" json:"resources"`
+	Timeout   int               `gorm:"type:int" json:"timeout"` // Timeout in seconds
 
 	// Status
-	Status  string `gorm:"type:varchar(255)"`
-	Error   string `gorm:"type:varchar(255)"`
-	Retries int    `gorm:"type:int"`
+	Status  string `gorm:"type:varchar(255)" json:"status"`
+	Error   string `gorm:"type:varchar(255)" json:"error"`
+	Retries int    `gorm:"type:int" json:"retries"`
 }
